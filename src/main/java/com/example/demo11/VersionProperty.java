@@ -16,5 +16,4 @@ public class VersionProperty {
 
     @Value("${app.springboot.version}")
     public String SpringBootVersion;
-    
 }
