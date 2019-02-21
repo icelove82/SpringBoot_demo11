@@ -7,7 +7,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
+import lombok.extern.slf4j.Slf4j;
+
 @RestController
+@Slf4j
 public class HelloWorldController {
 
     @Autowired
@@ -19,7 +22,7 @@ public class HelloWorldController {
     }
 
     @CrossOrigin(origins = "http://127.0.0.1:5500")
-    @RequestMapping(value = "/update/{id}", method = { RequestMethod.PATCH })
+    @RequestMapping(value = "/update/{id}", method = { RequestMethod.PATCH, RequestMethod.GET })
     public String updateData(@PathVariable(value = "id") String id) {
         return "The data get to update ID = " + id + ".";
     }
