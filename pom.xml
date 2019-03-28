@@ -9,9 +9,9 @@
   </parent>
   <groupId>com.example</groupId>
   <artifactId>demo11</artifactId>
-  <version>0.0.2-SNAPSHOT</version>
-  <name>demo</name>
-  <description>Demo project for Spring Boot</description>
+  <version>0.0.1-SNAPSHOT</version>
+  <name>WingUi-Master</name>
+  <description>WingUI Master Application</description>
   <properties>
     <java.version>1.8</java.version>
   </properties>

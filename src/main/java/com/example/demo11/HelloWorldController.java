@@ -27,7 +27,7 @@ public class HelloWorldController {
         return "The data get to update ID = " + id + ".";
     }
 
-    @RequestMapping("/version")
+    @RequestMapping("/appmetainfo")
     public VersionProperty getVersion() {
         return v;
     }
