@@ -14,6 +14,18 @@
 					</service-call>
 				</operation>
 			</operations>
+
+
+			<operations>
+				<operation id="LOAD">
+					<service-id></service-id>
+					<service-id></service-id>
+					<service-id></service-id>
+				</operation>
+			</operations>
+
+
+
 		</component>
 
 		<!-- label component : a1 -->
