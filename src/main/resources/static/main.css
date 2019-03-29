@@ -17,3 +17,7 @@ div {
   padding-top: 100px;
   padding-left: 550px;
 }
+
+#photo1{
+  border: 1px solid rgb(159, 45, 187);
+}
