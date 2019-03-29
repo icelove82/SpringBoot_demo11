@@ -14,6 +14,7 @@
 					</service-call>
 				</operation>
 			</operations>
+			operations>operation[id=LOAD]*3
 		</component>
 
 		<!-- label component : a1 -->
