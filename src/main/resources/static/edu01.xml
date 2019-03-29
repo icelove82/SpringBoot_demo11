@@ -1,163 +1,167 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <views>
-	<view id = 'edu01' template = 'MY/edu01'>
-	
-	<publish parent='Education' open='true' seq='001'/>
+	<view id='edu01' template='MY/edu01'>
 
-	<!-- data component : DATA01 -->
-	<component id='DATA01' type='DATA'>
-		<operations>
-			<operation id='LOAD'>
-				<service-call id='svc1'>
-					<service-id>GetItem</service-id>
-					<service-target>WingSampleData</service-target>
-				</service-call>
-			</operation>
-		</operations>
-	</component>
+		<publish parent='Education' open='true' seq='001'/>
 
-	<!-- label component : a1 -->
-	<component id='a1' type='LABEL'>
-		<view-model>
-			<width>100</width>
-			<background>black</background>
-			<tooltip>It is a label.</tooltip>
-			<font>
-				<bold>true</bold>
-				<italic>true</italic>
-				<size>20</size>
-				<color>white</color>
-			</font>
-		</view-model>
-		<model>
-			<init-value>Sample 1:</init-value>
-		</model>
-	</component>
-	
-	<!-- button component : a2 -->
-	<component id='a2' type='BUTTON'>
-		<view-model>
-			<name>OK1 button</name>
-			<icon>confirm</icon>
-		</view-model>
-		
-		<actions>
-			<action event-type='click'>
-				<operation-call id='opc1'>
-                    <component-id>COMMON</component-id>
-                    <operation-id>TOAST</operation-id>
-                    <parameters>
-                        <parameter id='title' value='Toast' />
-                        <parameter id='msg' value='success to show TOAST' />
-                        <parameter id='timer' value='3000' />
-                    </parameters>
-            </operation-call>
-			</action>
-		</actions>
-	</component>
-	
-	<!-- input component : b1 -->
-	<component id='b1' type='INPUTBOX'>
-		<view-model>
-			<width>150</width>
-			<background>red</background>
-		</view-model>
-		
-		<model>
-			<init-value>It is a inputbox.</init-value>
-			<value-id>VALUE</value-id>
-		</model>
-		
-		<operations>
-			<operation id='LOAD'>
-				<service-call id='svc1'>
-					<service-id>GetCheckData</service-id>
-					<service-target>WingSampleData</service-target>
-				</service-call>
-			</operation>
-		</operations>
-	
-	</component>
-	
-	<!-- button component : b2 -->
-	<component id='b2' type='BUTTON'>
-		<view-model>
-			<name>OK2 button</name>
-			<icon>confirm</icon>
-		</view-model>
-		
-		<actions>
-			<action event-type='click'>
-            	<operation-call id='opc1'>
+		<!-- data component : DATA01 -->
+		<component id='DATA01' type='DATA'>
+			<operations>
+				<operation id='LOAD'>
+					<service-call id='svc1'>
+						<service-id>GetItem</service-id>
+						<service-target>WingSampleData</service-target>
+					</service-call>
+				</operation>
+			</operations>
+		</component>
+
+		<!-- label component : a1 -->
+		<component id='a1' type='LABEL'>
+			<view-model>
+				<width>100</width>
+				<background>black</background>
+				<tooltip>It is a label.</tooltip>
+				<font>
+					<bold>true</bold>
+					<italic>true</italic>
+					<size>20</size>
+					<color>white</color>
+				</font>
+			</view-model>
+			<model>
+				<init-value>Sample 1:</init-value>
+			</model>
+		</component>
+
+		<!-- button component : a2 -->
+		<component id='a2' type='BUTTON'>
+			<view-model>
+				<name>OK1 button</name>
+				<icon>confirm</icon>
+			</view-model>
+
+			<actions>
+				<action event-type='click'>
+					<operation-call id='opc1'>
+						<component-id>COMMON</component-id>
+						<operation-id>TOAST</operation-id>
+						<parameters>
+							<parameter id='title' value='Toast' />
+							<parameter id='msg' value='success to show TOAST' />
+							<parameter id='timer' value='3000' />
+						</parameters>
+					</operation-call>
+				</action>
+			</actions>
+		</component>
+
+		<!-- input component : b1 -->
+		<component id='b1' type='INPUTBOX'>
+			<view-model>
+				<width>150</width>
+				<background>red</background>
+			</view-model>
+
+			<model>
+				<init-value>It is a inputbox.</init-value>
+				<value-id>VALUE</value-id>
+			</model>
+
+			<operations>
+				<operation id='LOAD'>
+					<service-call id='svc1'>
+						<service-id>GetCheckData</service-id>
+						<service-target>WingSampleData</service-target>
+					</service-call>
+				</operation>
+			</operations>
+
+		</component>
+
+		<!-- button component : b2 -->
+		<component id='b2' type='BUTTON'>
+			<view-model>
+				<name>OK2 button</name>
+				<icon>confirm</icon>
+			</view-model>
+
+			<actions>
+				<action event-type='click'>
+					<operation-call id='opc1'>
 						<component-id>b1</component-id>
 						<operation-id>LOAD</operation-id>
 						<success>
 							<operation-call id='opc2'>
-			                    <component-id>COMMON</component-id>
-			                    <operation-id>TOAST</operation-id>
-			                    <parameters>
-			                        <parameter id='title' value='Toast' />
-			                        <parameter id='msg' value='success to do LOAD operation.' />
-			                        <parameter id='timer' value='3000' />   
-			                    </parameters>
+								<component-id>COMMON</component-id>
+								<operation-id>TOAST</operation-id>
+								<parameters>
+									<parameter id='title' value='Toast' />
+									<parameter id='msg' value='success to do LOAD operation.' />
+									<parameter id='timer' value='3000' />
+								</parameters>
 							</operation-call>
 						</success>
 					</operation-call>
-			</action>
-		</actions>
-	</component>
-	
-	<!-- combobox component : c1 -->
-	<component id='c1' type='COMBOBOX'>
-		<view-model>
-			<name>MyCombo</name><!--label -->
-			<name-position>left</name-position><!--label위치 -->
-			<select-index>0</select-index>
-			<width>200</width>
-			<editable>false</editable>
-		</view-model>
+				</action>
+			</actions>
+		</component>
 
-		<model>
-			<text-id sort="asc">ITEM_ID</text-id><!--보여지는 값 -->
-			<value-id>ITEM_NAME</value-id><!--선택시 전달값 : 필수항목 -->
-		</model>
+		<!-- combobox component : c1 -->
+		<component id='c1' type='COMBOBOX'>
+			<view-model>
+				<name>MyCombo</name>
+				<!--label -->
+				<name-position>left</name-position>
+				<!--label위치 -->
+				<select-index>0</select-index>
+				<width>200</width>
+				<editable>false</editable>
+			</view-model>
 
-		<actions>
-			<action event-type='select-item'>
-				<operation-call id='opc1'>
-					<component-id>COMMON</component-id>
-					<operation-id>TOAST</operation-id>
-					<parameters>
-						<parameter id='title' value='You select' />
-						<parameter id='msg' reference-id='c1' />
-						<parameter id='timer' value='3000' />
-					</parameters>
-				</operation-call>
-			</action>
-		</actions>
+			<model>
+				<text-id sort="asc">ITEM_ID</text-id>
+				<!--보여지는 값 -->
+				<value-id>ITEM_NAME</value-id>
+				<!--선택시 전달값 : 필수항목 -->
+			</model>
 
-		<operations>
-			<operation id='LOAD'>
-				<reference-service-call id='DATA01:svc1'></reference-service-call>
-			</operation>
-		</operations>
-	</component>
+			<actions>
+				<action event-type='select-item'>
+					<operation-call id='opc1'>
+						<component-id>COMMON</component-id>
+						<operation-id>TOAST</operation-id>
+						<parameters>
+							<parameter id='title' value='You select' />
+							<parameter id='msg' reference-id='c1' />
+							<parameter id='timer' value='3000' />
+						</parameters>
+					</operation-call>
+				</action>
+			</actions>
 
-    <!-- button component : c2 -->
-    <component id='c2' type='BUTTON'>
-        <view-model>
-            <name>Data Load</name>
-        </view-model>
+			<operations>
+				<operation id='LOAD'>
+					<reference-service-call id='DATA01:svc1'/>
+				</operation>
+			</operations>
+		</component>
 
-        <actions>
-            <action event-type='click'>
-                <operation-call id='opc1'>
-                    <component-id>c1</component-id>
-                    <operation-id>LOAD</operation-id>
-                </operation-call>
-            </action>
-        </actions>
-    </component>
+		<!-- button component : c2 -->
+		<component id='c2' type='BUTTON'>
+			<view-model>
+				<name>Data Load</name>
+			</view-model>
+
+			<actions>
+				<action event-type='click'>
+					<operation-call id='opc1'>
+						<component-id>c1</component-id>
+						<operation-id>LOAD</operation-id>
+					</operation-call>
+				</action>
+			</actions>
+		</component>
 
 	</view>
 </views>
